@@ -154,7 +154,7 @@ class DIONetworkService extends NetworkService {
   Future<Result<NetworkFailure, NetworkResponseModel<T>>>
       _parseError<T extends Entity>(e) async {
     try {
-      if (e is DioError) {
+      if (e is DioException) {
         if (e.response?.data != null) {
           final data = e.response?.data as Map<String, dynamic>;
           final error = data["message"] as String?;
@@ -166,7 +166,8 @@ class DIONetworkService extends NetworkService {
         } else {
           final connection = await checkInternetConnection();
           if (connection) {
-            return Failure(NetworkFailure(message: e.message, statusCode: 400));
+            return Failure(
+                NetworkFailure(message: e.message ?? '', statusCode: 400));
           } else {
             return Failure(const NetworkFailure(
                 message:
