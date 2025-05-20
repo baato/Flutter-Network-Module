@@ -17,7 +17,7 @@ dependencies:
 
   flutter_core:
     git:
-      url: https://github.com/bemohansingh/flutter_core.git
+      url: https://github.com/Risav25Pokhrel/flutter_core.git
       ref: main
 
 dev_dependencies:
