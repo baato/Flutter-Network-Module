@@ -14,7 +14,7 @@ dependencies:
     path: ../
   flutter_core:
     git:
-      url: https://github.com/Risav25Pokhrel/flutter_core.git
+      url: https://github.com/baato/flutter_core.git
       ref: main
 
   cupertino_icons: ^1.0.2
